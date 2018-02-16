@@ -7,9 +7,8 @@ var module = angular.module("myApp",[]);
 
 			var getDateTime = new Date();
 			$scope.time = getDateTime.toTimeString();
-			console.log(typeof($scope.time));
+			$scope.userName;
+			console.log($scope.userName);
+			console.log(typeof($scope.userName));
 		}
-		
-
 	}
-	console.log(angular);
