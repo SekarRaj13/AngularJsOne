@@ -12,8 +12,22 @@
 	<p ng-if="ctrl.checked">Some Content</p>
 	<p ng-show="ctrl.checked">Some Content Show</p>
 	<p ng-hide="ctrl.checked">Some Content Hide</p>
+
+	<!-- ng-repeat directive -->  
+	<!-- copies of variable -->
+
+	<div ng-repeat="i in ctrl.myList">    
+		<p>index: {{$index}}</p>	
+		<p>first: {{$first}}</p>
+		<p>last: {{$last}}</p>
+		<p>odd: {{$odd}}</p>
+		<p>even: {{$even}}</p>
+		<p>name: {{i.name}}</p>
+		<p>age: {{i.age}}</p>
+		<hr>
+	</div>
+
+	<!-- end ng-repeat directive -->
 </div>
-
-
 </body>
 </html>
