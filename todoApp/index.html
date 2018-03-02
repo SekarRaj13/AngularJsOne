@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+	<title>Todo App</title>
+	<script type="text/javascript" src="../assets/angular/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="todoCtrl as ctrl">
+<div>
+	<input type="text" ng-model="ctrl.todo">
+	<button ng-click="ctrl.todoData()">Add</button>
+</div>
+<div><button ng-hide="ctrl.edittodo" ng-click="ctrl.editTodo()">Edit</button>
+	<button ng-show="ctrl.edittodo" ng-click="ctrl.editTodo()">Done</button>
+</div>
+<div>
+	<!-- items to be keyed by their position in the array instead of their value: by using trackby  -->
+	<p ng-repeat="data in ctrl.datas track by $index"> 
+		<span ng-hide="ctrl.edittodo" ng-bind="data"></span>
+		<input ng-show="ctrl.edittodo" type="text" ng-model="data">
+		<button ng-click="ctrl.deleteTodo($index)" ng-hide="ctrl.edittodo">Delete</button>
+	</p>
+</div>
+</body>
+</html>
